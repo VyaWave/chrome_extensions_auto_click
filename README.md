@@ -1,0 +1,1 @@
+# chrome_extensions_auto_click
