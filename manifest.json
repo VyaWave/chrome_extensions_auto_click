@@ -1,0 +1,36 @@
+{
+  "name": "Auto Click",
+  "description": "Base",
+  "version": "1.1.0",
+  "manifest_version": 3,
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "log.png",
+    "default_title": "AutoClick"
+  },
+  "icons": {
+    "128": "log.png"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "all_frames": true,
+      "css": ["style.css"],
+      "js": ["content.js"],
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+      ],
+      "run_at": "document_end"
+    }
+  ],
+  "permissions": [
+    "tabs",
+    "storage",
+    "activeTab",
+    "background",
+    "webNavigation"
+  ]
+}
